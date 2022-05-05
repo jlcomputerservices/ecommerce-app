@@ -13,8 +13,13 @@
       </b-card>
     </div>
     <template v-if="dataList.length > 4">
-      <div>
-        <p>pagination</p>
+      <div class="d-flex justify-content-center">
+        <b-pagination
+          v-model="currentPage"
+          pills
+          :total-rows="rows"
+          size="sm"
+        />
       </div>
     </template>
   </div>
@@ -62,6 +67,8 @@ export default {
         variant: "primary",
       },
     ],
+    rows: 100,
+    currentPage: 1,
   }),
 };
 </script>
